@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchMoodTracker" customModuleProvider="target">
+                    <items>
+                        <button width="1" height="1" alignment="left" title="How are you feeling?" id="7n1-Nx-7k9">
+                            <connections>
+                                <segue destination="fY4-eE-CYB" kind="push" id="ynB-6F-OPd"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="71" y="138"/>
+        </scene>
+        <!--Mood Controller-->
+        <scene sceneID="Ydy-fN-PKM">
+            <objects>
+                <controller id="fY4-eE-CYB" customClass="MoodController" customModule="WatchMoodTracker_Extension">
+                    <items>
+                        <table alignment="left" id="KXc-FQ-b8T">
+                            <items>
+                                <tableRow identifier="moodRow" id="pld-2s-AW3" customClass="MoodRow" customModule="WatchMoodTracker_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Mw3-BW-xFw">
+                                        <items>
+                                            <imageView width="0.29999999999999999" height="0.84999999999999998" alignment="left" verticalAlignment="center" id="4uX-QR-WR2"/>
+                                            <label width="0.69999999999999996" height="1" alignment="left" verticalAlignment="center" text="Label" id="SEo-qp-DKh"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="moodImg" destination="4uX-QR-WR2" id="srq-yO-ai5"/>
+                                        <outlet property="moodLabel" destination="SEo-qp-DKh" id="vqI-Fa-nT8"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="KXc-FQ-b8T" id="KNe-2g-mjG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="344" y="138"/>
+        </scene>
+    </scenes>
+</document>

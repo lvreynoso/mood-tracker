@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rlp-2Y-OcH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Calendar View Controller-->
+        <scene sceneID="sy0-Da-Fua">
+            <objects>
+                <viewController storyboardIdentifier="calendarVC" id="Auz-Ey-sYG" customClass="CalendarViewController" customModule="mood_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cYh-zT-RmQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erj-lc-vRv">
+                                <rect key="frame" x="169" y="318.5" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="pressDone:" destination="Auz-Ey-sYG" eventType="touchUpInside" id="tNh-v1-UR4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="erj-lc-vRv" firstAttribute="centerX" secondItem="cYh-zT-RmQ" secondAttribute="centerX" id="7w2-W7-osD"/>
+                            <constraint firstItem="erj-lc-vRv" firstAttribute="centerY" secondItem="cYh-zT-RmQ" secondAttribute="centerY" id="rxX-jm-7fS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qtk-mG-XJf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQZ-8S-xw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="-635"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -22,29 +50,53 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moodEntryCell" textLabel="yln-bN-n4d" detailTextLabel="v0M-UB-vTI" style="IBUITableViewCellStyleSubtitle" id="psW-YU-0EB">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moodEntryCell" rowHeight="72" id="x5I-DG-3BJ" customClass="MoodEntryTableViewCell" customModule="mood_tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="psW-YU-0EB" id="KlB-ZA-wy3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x5I-DG-3BJ" id="MMA-xf-WcI">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yln-bN-n4d">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v0M-UB-vTI">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5Iu-ke-8wB">
+                                                    <rect key="frame" x="20" y="11" width="314" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otC-k7-3ok">
+                                                            <rect key="frame" x="0.0" y="0.0" width="314" height="31.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJS-oc-mgw">
+                                                            <rect key="frame" x="0.0" y="35.5" width="314" height="14.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GTC-Fa-qyY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="SvF-S4-PMJ"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GTC-Fa-qyY" firstAttribute="top" secondItem="MMA-xf-WcI" secondAttribute="top" id="5Wg-I7-spR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5Iu-ke-8wB" secondAttribute="bottom" id="7YL-NO-aku"/>
+                                                <constraint firstItem="GTC-Fa-qyY" firstAttribute="leading" secondItem="MMA-xf-WcI" secondAttribute="leading" id="EIZ-5g-UbT"/>
+                                                <constraint firstItem="5Iu-ke-8wB" firstAttribute="top" secondItem="MMA-xf-WcI" secondAttribute="topMargin" id="Hsu-GV-23o"/>
+                                                <constraint firstAttribute="bottom" secondItem="GTC-Fa-qyY" secondAttribute="bottom" constant="-0.5" id="RdX-lR-596"/>
+                                                <constraint firstItem="5Iu-ke-8wB" firstAttribute="leading" secondItem="GTC-Fa-qyY" secondAttribute="trailing" constant="8" id="WVp-jJ-acy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5Iu-ke-8wB" secondAttribute="trailing" id="vV7-0O-UH8"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewMoodColor" destination="GTC-Fa-qyY" id="hUX-dl-C62"/>
+                                            <outlet property="labelMoodDate" destination="EJS-oc-mgw" id="yzf-WL-LPl"/>
+                                            <outlet property="labelMoodTitle" destination="otC-k7-3ok" id="ECd-zO-FeO"/>
+                                            <segue destination="GHj-jA-n3q" kind="show" identifier="showEntryDetails" id="UYa-j4-Fv9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -58,13 +110,176 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qse-Mw-0cf">
+                        <barButtonItem key="leftBarButtonItem" title="Calendar" id="8Px-Iy-ocK">
+                            <connections>
+                                <action selector="pressCalendar:" destination="BYZ-38-t0r" id="9PD-y4-xGm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="WE9-oU-y8l">
+                            <connections>
+                                <segue destination="GHj-jA-n3q" kind="show" identifier="showNewEntry" id="Fp6-a1-O8V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="moodsTable" destination="HvH-Gl-HvQ" id="zQP-ny-S5d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="ITt-re-hSg">
+            <objects>
+                <viewController id="GHj-jA-n3q" customClass="MoodDetailedViewController" customModule="mood_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kfP-0e-NyE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A2d-Qr-2PU">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCB-GP-5D0">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dE3-Mt-iWl">
+                                        <rect key="frame" x="0.0" y="32" width="343" height="249.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hw-xg-OK0">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Amazing">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="GHj-jA-n3q" eventType="touchUpInside" id="5M3-PW-bhS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYK-gT-NB3">
+                                                <rect key="frame" x="0.0" y="51.5" width="343" height="43.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Good">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="GHj-jA-n3q" eventType="touchUpInside" id="WaJ-cj-yOW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJ2-RW-M60">
+                                                <rect key="frame" x="0.0" y="103" width="343" height="43.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Neutral">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="GHj-jA-n3q" eventType="touchUpInside" id="93B-al-ttm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-aU-XnL">
+                                                <rect key="frame" x="0.0" y="154.5" width="343" height="43.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Bad">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="GHj-jA-n3q" eventType="touchUpInside" id="CXZ-tM-jBi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTL-Vj-GBt">
+                                                <rect key="frame" x="0.0" y="206" width="343" height="43.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Terrible">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="GHj-jA-n3q" eventType="touchUpInside" id="upz-dd-SCV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYz-Q8-wXP">
+                                        <rect key="frame" x="0.0" y="289.5" width="343" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5QO-tP-kfI">
+                                        <rect key="frame" x="0.0" y="321.5" width="343" height="249.5"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="565819055.48568702">
+                                            <!--2018-12-06 19:57:35 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="datePickerDidChangeValue:" destination="GHj-jA-n3q" eventType="valueChanged" id="7Gi-a3-WBb"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5QO-tP-kfI" firstAttribute="height" secondItem="dE3-Mt-iWl" secondAttribute="height" id="Bjz-xL-41S"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A2d-Qr-2PU" firstAttribute="leading" secondItem="o25-k1-aS3" secondAttribute="leading" constant="16" id="P3G-dG-fsc"/>
+                            <constraint firstItem="o25-k1-aS3" firstAttribute="trailing" secondItem="A2d-Qr-2PU" secondAttribute="trailing" constant="16" id="XTy-3l-Iad"/>
+                            <constraint firstItem="o25-k1-aS3" firstAttribute="bottom" secondItem="A2d-Qr-2PU" secondAttribute="bottom" constant="16" id="iXH-e2-Zcg"/>
+                            <constraint firstItem="A2d-Qr-2PU" firstAttribute="top" secondItem="o25-k1-aS3" secondAttribute="top" constant="16" id="yzx-Ns-L1Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o25-k1-aS3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="R91-BZ-vOm">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="gZ0-ly-8RV">
+                            <connections>
+                                <action selector="pressCancel:" destination="GHj-jA-n3q" id="sGI-Xd-MnO"/>
+                                <segue destination="nHq-hd-sBQ" kind="unwind" identifier="unwindFromCancel" unwindAction="unwindToHome:" id="f1w-nh-0ff"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Upf-Ms-ogU">
+                            <connections>
+                                <action selector="pressSave:" destination="GHj-jA-n3q" id="ine-GW-moF"/>
+                                <segue destination="nHq-hd-sBQ" kind="unwind" identifier="unwindFromSave" unwindAction="unwindToHome:" id="rvU-wJ-85B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buttonAmazingMood" destination="3Hw-xg-OK0" id="wFz-JL-PUg"/>
+                        <outlet property="buttonBadMood" destination="K4g-aU-XnL" id="VcW-YU-rIM"/>
+                        <outlet property="buttonGoodMood" destination="FYK-gT-NB3" id="iXP-LO-JHx"/>
+                        <outlet property="buttonNeutralMood" destination="GJ2-RW-M60" id="Odg-ym-iRr"/>
+                        <outlet property="buttonTerribleMood" destination="DTL-Vj-GBt" id="zWe-hv-74N"/>
+                        <outlet property="datePicker" destination="5QO-tP-kfI" id="ur4-s1-9ye"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-KY-7JT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nHq-hd-sBQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WqS-me-qxw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rlp-2Y-OcH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QCS-eX-Ons">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HWW-aS-bd6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ds-hH-sU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fp6-a1-O8V"/>
+    </inferredMetricsTieBreakers>
 </document>
